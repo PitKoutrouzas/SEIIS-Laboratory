@@ -1,0 +1,73 @@
+COOKIES:
+-------------------------
+$timi = "Hello World!";
+setcookie("OnomaCookie",$timi,time()+10)  //(onoma,timi,xronos)
+echo $_COOKIE["OnomaCookie"] //pairnw tin timi tou cookie
+setcookie("OnomaCookie", "",time()-1) //katastrefw to cookie
+
+SESSIONS:
+-------------------------
+session_start();     -- se kathe page pou xrisimopoiw session
+session_destroy();   -- sto telos tou page. Tha katastrepsei
+			oles tis metavlites sessions
+unset(session var)   -- adeiazei ti metavliti apo to value tis
+
+Radiobuttons:
+---------------------------------------------------
+(anhkoun sto idio name / radiogroup)
+
+-> <input type="radio" name="Radiobutton" value="(id1)">
+   Onoma tou radio button 1:
+   <input type="radio" name="Radiobutton" value="(id2)">
+   Onoma tou radio button 2:
+   <input type="radio" name="Radiobutton" value="(id3)">
+   Onoma tou radio button 3:
+
+     ---Gia na dw pio einai epilegmeno---
+
+if (isset($_POST["Radiobutton"])
+{
+  $id = $_POST["Radiobutton"]
+}
+
+
+Checkboxes:
+---------------------------------------------------
+(anhkoun se pinaka)
+
+-> <input type="checkbox" name="Checkbox[]" value="(id1)">
+   Onoma tou checkbox 1:
+   <input type="checkbox" name="Checkbox[]" value="(id2)">
+   Onoma tou checkbox 2:
+   <input type="checkbox" name="Checkbox[]" value="(id3)">
+   Onoma tou checkbox 3:
+
+      ---Gia na dw pio einai epilegmeno---
+
+if (isset($_POST["Checkbox **(xwris to [])** "]))
+{
+  //Einai pinakas gia afto prepei na paroume ksexwrista
+  //ton arithmo eggrafwn ston pinaka kai ta id
+  //(p.x array[1] = apple)
+
+  $values = $_POST["Checkbox"];  //oi times tou pinaka
+  $counter = count($values);     //o arithmos twn eggrafwn
+  
+  for ($i=0; $i<$counter; $i++)
+  {
+     echo $values[$i];      // Tipwnontai oi times 
+  }
+
+}
+
+Dropdown Lists:
+--------------------------------------
+<form action="index2.php" method="post">
+   <select name="list">
+      <option value="<?php echo $id;?>">Click here!</option>
+
+    ---Gia na dw pio einai epilegmeno---
+
+$id = $_POST["list"];
+$result = mysqli_query($con, "select * from flights where id = '$id'");
+

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Contact us</title>
+<link rel="stylesheet" href="contactus_style.css"/>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+</head>
+
+<body>
+<!--HEADER START-->
+
+<nav class="header">
+	<div class="nav-container">
+		<div class="nav-logo-seiis">
+			<img src="logo.png" width="150" height="100"/>
+		</div>
+		<div class="nav-pages_signin">
+			<ul class="nav-pages">
+				<li class="nav-home"><a href="index.php">Home</a></li><br/>
+				<span class="blank">|</span>
+				<li class="nav-tm"><a href="#">Team Members</a> </li><br/>
+       			<span class="blank">|</span>
+        		<li class="nav-pub"><a href="publications.html">Publications</a> </li><br/>
+        		<span class="blank">|</span>
+        		<li class="nav-projects"><a href="projects.html">Projects</a> </li><br/>
+        		<span class="blank">|</span>
+        		<li class="nav-ra"><a href="#">Research Areas</a></li><br/>
+				<span class="blank">|</span>
+        		<li class="nav-news"><a href="#">News</a></li><br/>
+        		<span class="blank">|</span>
+        		<div class="dropdown">
+				<li class="nav-notes"> <button class="dropbtn">More>></button>
+  <div class="dropdown-content">
+   <a href="Reports.html">Reports</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="#">Users</a>
+    <a href="#">Contact Us</a> 
+  </div>
+</div>
+</li>
+			</ul>
+			<ul class="nav-signin">
+				<li><a href="#">Sign Out</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!--HEADER END-->
+
+<!--MAIN BODY STARTS-->
+
+<form action="editcontact.php" method="post">
+<br/><br/>
+	Email: <input type="email" name="email"/>
+	<br/><br/>
+	Tel:<input type="number" name="tel"/>
+	<br/><br/>
+	Fax: <input type="number" name="fax"/>
+	<br/><br/>
+	Address: <input type="text" name="address"/>
+	<br/><br/>
+	Map:<div id="map">map</div>
+	
+</form>
+</body>
+</html>
